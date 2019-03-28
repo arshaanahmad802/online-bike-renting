@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<title>ONLINE BIKE RENTING SYSTEM</title>
+<style type="text/css">
+   body
+    {
+    background-image: url(first.jpg);
+    background-position:left top;
+    background-repeat:no-repeat;
+    background-size:cover;
+		
+    }
+    .dd
+    {
+        width: 1352px;
+        height: 50px;
+        color: aqua;
+        font-weight: bolder;
+        position: absolute;
+        top: 0%;
+        left:0%;
+        font-size: 40px;
+        background-color: rgba(0,0,0,0.3);
+        padding-left: 10px;
+        
+    }
+.aa{
+	width:500px;
+	height: 1000px;
+	background-color: rgba(0,0,0,0.4);
+	padding-left: 20px;
+	padding-top: 10px;
+	border-radius: 15px;
+	font-weight: bolder;
+    margin-left: auto;
+    color: aqua;
+}
+.aa input[type="text"]{
+	width:400px;
+	height:20px;
+	border-radius:5px;
+}													.aa input[type="number"]{
+	width:400px;
+	height:20px;
+	border-radius:5px;
+}																																			
+.aa input[type="password"]{
+	width:400px;
+	height:20px;
+	border-radius:5px;
+}							
+.aa input[type="submit"]{
+	width:100px;
+	border-radius:5px;
+	background-color:rgba(0,1,0,0.1);
+	font-weight: bolder;
+	font-color: white;
+	
+
+}																																							
+    h1{
+        color: aqua;
+    }
+
+</style>
+</head>
+<body>
+<script language="javascript">
+function verify()
+{
+	if(!adhar())
+		return false;
+	else if(!firstname())
+		return false;
+	else if(!password())
+		return false;
+	else if(!current())
+		return false;
+	else if(!mobilenumber())
+		return false;
+    else if(!email())
+		return false;
+	
+	else 	return true;
+	}
+function email()
+{
+var email=document.getElementById("email").value;
+var len=email.length;
+if(len==0)
+{
+alert("enter the email id");
+document.getElementById("email").focus();
+return false;
+}
+return true;
+}
+function adhar()
+{
+var adhar=document.getElementById("adhar").value;
+var len=adhar.length;
+if(len==0)
+{
+alert("enter the adhar id");
+document.getElementById("adhar").focus();
+return false;
+}
+if(len!=12)
+{
+alert("enter correct adhar id");
+document.getElementById("adhar").focus();
+return false;
+}
+return true;
+}
+function firstname()
+{
+var firstname=document.getElementById("firstname").value;
+var len=firstname.length;
+if(len==0)
+{
+alert("enter the first name");
+document.getElementById("firstname").focus();
+return false;
+}
+return true;
+}
+function password()
+{
+var password=document.getElementById("password").value;
+var password1=document.getElementById("password1").value;
+var len=password.length;
+if(len==0)
+{
+alert("enter the password");
+document.getElementById("password").focus();
+return false;
+}
+if(password!=password1)
+{
+alert("password does not match");
+document.getElementById("password1").focus;
+return false;
+}
+return true;
+}
+
+function mobilenumber()
+{
+var mobilenumber=document.getElementById("mobilenumber").value;
+var len=mobilenumber.length;
+if(len==0)
+{
+alert("enter the mobile number");
+document.getElementById("mobilenumber").focus();
+return false;
+}
+if(len>10)
+{
+alert("enter correct mobile number");
+document.getElementById("mobilenumber").focus();
+return false;
+}
+return true;
+}
+function current()
+{
+var currentaddress=document.getElementById("currentaddress").value;
+var len=currentaddress.length;
+if(len==0)
+{
+alert("enter the address");
+document.getElementById("currentaddress").focus();
+return false;
+}
+return true;
+}
+
+</script>
+
+<center><h1>  REGISTRATION FORM<h1></center>
+    <br><br>
+<div class="aa">
+<form method="post" action="register.php" onSubmit="return verify()">
+	ADHARCARD NUMBER<span style="color:red;font:10px">*</span> : <input type="number" name="adhar" placeholder="enter your adhaarcard no.." id="adhar" required><br><br><br>
+	FIRST NAME<span style="color:red;font:10px">*</span>: <input type="text" name="firstname" placeholder="enter your first name.." id="firstname" required><br><br><br>
+	LAST NAME: <input type="text" name="lastname" placeholder="enter your last name.." required><br><br><br>
+    CITY<span style="color:red;font:10px">*</span>:<br> <input type="text" name="city" placeholder="enter your city.." required><br><br><br>
+	FATHER NAME: <input type="text" name="fathername" placeholder="enter your father name.." required><br><br><br>
+	MOBILE NUMBER<span style="color:red;font:10px">*</span>: <input type="number" name="mobilenumber" placeholder="enter your  mobile number registered.." id="mobilenumber" required><br><br><br>
+	CURRENT ADDRESS<span style="color:red;font:10px">*</span>: <input type="text" name="currentaddress" placeholder="enter your current address.." id="currentaddress" required><br><br><br>
+	PERMANENT ADDRESS: <input type="text" name="permanentaddress" placeholder="enter your permanent address." required><br><br><br>
+    PASSWORD<span style="color:red;font:10px">*</span>: <input type="password" name="password" id="password" placeholder="enter your password." required><br><br><br>
+    RE-ENTER PASSWORD<span style="color:red;font:10px">*</span>: <input type="password" name="password1" id="password1" placeholder="enter your password." required><br><br><br>
+	SEX: <br><input type="radio" name="sex" value="male">Male<br>
+	<input type="radio" name="sex" value="female">Female<br><br>
+    <input type="hidden" name="user" value="user">
+	<input type="submit" value="SUBMIT">
+</form>
+</div>
+
+    <div class="dd">
+        <img src="head2 (3).png" height="30px" width="30px">&nbsp&nbsp DeStInAtIoN
+    </div>
+</body>
+</html>
